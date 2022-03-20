@@ -1,7 +1,7 @@
 public class Player extends Persona {
 
     public Player(String name){
-        super(name, 100, 0, 25, 0, 10, 0);
+        super(name, 100, 0, 33, 0, 10, 0);
     }
 
     @Override
@@ -28,11 +28,13 @@ public class Player extends Persona {
         }
     }
 
-    public void changeGold(int gold){
+    public boolean changeGold(int gold){
         if(this.gold + gold > 0){
             this.gold += gold;
+            return true;
         } else {
             System.out.println("Недостаточно золота!");
+            return false;
         }
     }
 
